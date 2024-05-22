@@ -19,9 +19,8 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "main": "index.html",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node src/index.js"
   },
   "eslintConfig": {
     "extends": [
