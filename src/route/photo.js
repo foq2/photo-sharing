@@ -17,21 +17,21 @@ router.get("/user/:id", verifyToken, async (req, res) => {
       });
       return;
     }
-    const photoList = await Photo.find({ user_id: userId })
+    const photosList = await Photo.find({ user_id: userId })
       .sort({ date_time: -1 })
       .lean();
 
-    for (const i in photoList) {
-      for (const j in photoList[i].comments) {
-        const user = await User.findById(photoList[i].comments[j]["user_id"]);
-        photoList[i].comments[j].user = user;
+    for (const i in photosList) {
+      for (const j in photosList[i].comments) {
+        const user = await User.findById(photosList[i].comments[j]["user_id"]);
+        photosList[i].comments[j].user = user;
       }
     }
-    console.log("PhotoList:", photoList);
+    console.log("PhotoList:", photosList);
     res.status(200).json({
       status: 200,
       message: "Success!",
-      photoList,
+      photosList,
     });
   } catch (e) {
     console.log(e);

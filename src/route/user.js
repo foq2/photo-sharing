@@ -6,16 +6,16 @@ const bcrypt = require("bcrypt");
 
 //user list
 router.get("/", verifyToken, async (req, res) => {
-  const userList = await User.find({}).select([
+  const usersList = await User.find({}).select([
     "_id",
     "first_name",
     "last_name",
   ]);
-  console.log(userList);
+  console.log(usersList);
   res.status(200).json({
     status: 200,
     message: "Success!",
-    userList,
+    usersList,
   });
 });
 //found user

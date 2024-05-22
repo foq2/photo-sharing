@@ -10,12 +10,14 @@ const Comment = require("./route/comment");
 dbConnect();
 
 app.use(cors());
-app.use("/images", express.static("images"));
+app.use("/static", express.static("static"));
 app.use(express.json());
+
 app.use("/api/auth", Auth);
 app.use("/api/photo", Photo);
 app.use("/api/user", User);
 app.use("/api/comment", Comment);
+
 app.listen(process.env.PORT, () => {
   console.log(`Server listening on port ${process.env.PORT}`);
 });
