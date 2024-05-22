@@ -2,7 +2,7 @@ const path = require("path");
 const multer = require("multer");
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "static/images");
+    cb(null, "static/images"); 
   },
   filename: (req, file, cb) => {
     const currentTime = new Date().getTime();

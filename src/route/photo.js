@@ -52,7 +52,7 @@ router.post(
       const file = req.file;
       console.log(file);
       const photoEntity = new Photo({
-        file_name: file.file_name,
+        file_name: file.filename,
         user_id: req.body.user_id,
         comments: [],
       });
@@ -69,7 +69,7 @@ router.post(
         message: "Internal service error!",
       });
     }
-  }
+  },
 );
 
 module.exports = router;

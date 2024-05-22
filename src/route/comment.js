@@ -27,7 +27,6 @@ router.post("/photo/:id", verifyToken, async (req, res) => {
       date_time: commentForCreation.date_time,
       user_id: commentForCreation.user_id,
     });
-    // console.log("123456789", photoEntity.comments);
     await comment.save();
     photoEntity.comments.push(comment);
     await photoEntity.save();
