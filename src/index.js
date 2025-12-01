@@ -10,7 +10,7 @@ const Comment = require("./route/comment");
 dbConnect();
 
 app.use(cors());
-app.use("/static", express.static("static"));
+app.use("/static/images", express.static("static"));
 app.use(express.json());
 
 app.use("/api/auth", Auth);
